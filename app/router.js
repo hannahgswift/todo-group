@@ -6,6 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('todo-group', { path: '/todo-group' }, function() {
+  this.route('new');
+});
+
 });
 
 export default Router;
