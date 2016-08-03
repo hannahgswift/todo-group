@@ -2,15 +2,23 @@
   <div class="container">
     <div class="content">
       <h2 class="page-title">Your Todo List!</h2>
-      {{#link-to "todo-group.new" class="new-link"}}Add a Todo{{/link-to}}
+      {{#link-to "todo-group.new" class="new-link" }}Add a Todo{{/link-to}}
 
-
-
-      <ul class="todo-list">
-        <li class="todo-list__item">Hello</li>
-        <li class="todo-list__item">Hello</li>
-
-      </ul>
+      <div class="todo-list">
+        <p>These are the things you need to get done.</p>
+        {{#each model as |todo-group|}}
+          {{!-- {{#unless todo-group.isDeleted}} --}}
+            <div class="todo-list__item">
+              <div class="box">
+                <p class="todo-name">
+                  <button class="button delete-todo" data-id="{{todo-group.id}}" {{action "destroy" todo-group}}>Delete</button>
+                  {{todo-group.verb}}
+                </p>
+              </div>
+            </div>
+          {{!-- {{/unless}} --}}
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>
