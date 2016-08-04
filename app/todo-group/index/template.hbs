@@ -13,7 +13,8 @@
               </h4>
             </div>
             <div class="button-container">
-              <button class="button delete delete-btn" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}>Delete</button>
+              <button class="button delete delete-btn" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}><i class="fa fa-trash-o" aria-hidden="true"></i>
+Delete</button>
               {{#link-to "todo-group.edit" todoGroup.id class="edit-btn"}}Edit{{/link-to}}
             </div>
           </div>

@@ -4,7 +4,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf');
+    // app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf');
 
     // Add options here
   });
