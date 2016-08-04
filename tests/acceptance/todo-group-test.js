@@ -11,23 +11,47 @@ test('visiting /todo-groups', function(assert) {
   });
 });
 
-test('visiting /todo-groups shows a list of tasks', function(assert) {
-  server.createList('todo-group', 10);
+test('user can see list of todo categories when visiting /todo-groups', function(assert) {
+  server.createList('todo-group', 5);
   visit('/todo-groups');
 
   andThen(function() {
-    findWithAssert('.todo-list');
-    assert.equal(findWithAssert('.todo-list__item').length, 10);
+    assert.equal(currentURL(), '/todo-groups');
+    assert.equal(currentRouteName(), 'todo-group.index');
+
+    assert.equal(findWithAssert('.page-title').text().trim(),
+      'Categories',
+      'There is an element with a class "page-title" that says "Categories"');
+    assert.equal(findWithAssert('.collection__item').length, 5,
+      'There should be a "collection__item" for each "todo-group" record in the API.' +
+      'To do this you should load the models from Ember Data into your template');
+
+    const firstGroup = server.db.todoGroups.find(1);
+    assert.equal(findWithAssert('.todo-group__title:first').text().trim(), firstGroup.verb,
+      'For each "todo-group" pulled from the API, there should be an element with the class' +
+      '"todo-group__title" filled with the title of the looped over todo.' +
+      '(Note: this only tests the title of the first group, but should give the same result)');
   });
-});
+})
 
-test('user can navigate to add new todo from main list', function(assert) {
+// test('visiting /todo-groups shows a list of tasks', function(assert) {
+//   server.createList('todo-group', 10);
+//   visit('/todo-groups');
+//
+//   andThen(function() {
+//     findWithAssert('.todo-list');
+//     assert.equal(findWithAssert('.todo-list__item').length, 10);
+//   });
+// });
+
+test('user can navigate to new form from /todo-groups', function(assert) {
   visit('/todo-groups');
-  click('.new-link');
+  click('.new-btn');
 
   andThen(function() {
+    assert.equal(currentRouteName(), 'todo-group.new');
     assert.equal(currentURL(), '/todo-groups/new');
-    assert.equal(findWithAssert('.page-title').text().trim(), 'New Todo');
+  //   assert.equal(findWithAssert('.page-title').text().trim(), 'New Todo');
   });
 });
 
@@ -55,7 +79,7 @@ test('user can click a button to delete a todo!', function(assert) {
   click('.delete[data-id=1]');
 
   andThen(function() {
-    assert.equal(find('.todo-list__item').length, 3, 'The deleted item should not show in the list');
+    assert.equal(find('.todo-list__item').length, 4, 'The deleted item should not show in the list');
     // assert.equal(server.db.todo-groups.find(1), null, 'The deleted author should be removed from the API');
   });
 });

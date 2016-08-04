@@ -1,20 +1,21 @@
 <div class="section">
   <div class="container">
     <div class="content">
-      <h2 class="page-title">Your Todo List!</h2>
-      {{#link-to "todo-group.new" class="new-link" }}Add a Todo{{/link-to}}
+      <h2 class="page-title">Categories</h2>
+      {{#link-to "todo-group.new" class="new-btn" }}Add a Todo{{/link-to}}
 
-      <div class="todo-list">
-        {{#each model as |todo-group|}}
-          <div class="todo-list__item">
+      <div class="todo-group">
+        {{#each model as |todoGroup|}}
+          <div class="collection__item">
+            {{!-- <h3 class="todo-group__title"></h3> --}}
             <div class="box">
-              <p class="todo-name">
-                {{todo-group.verb}}
-              </p>
+              <h4 class="todo-group__title">
+                {{todoGroup.verb}}
+              </h4>
             </div>
             <div class="button-container">
-              <button class="button delete delete-todo" data-id="{{todo-group.id}}" {{action "destroy" todo-group}}>Delete</button>
-            {{#link-to "todo-group.detail" todo-group.id class="edit-todo"}}Edit{{/link-to}}
+              <button class="button delete delete-todo" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}>Delete</button>
+            {{#link-to "todo-group.detail" todoGroup.id class="edit-todo"}}Edit{{/link-to}}
             </div>
           </div>
         {{/each}}
