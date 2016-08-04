@@ -55,21 +55,15 @@ test('user can navigate to new form from /todo-groups', function(assert) {
   });
 });
 
-test('user can navigate to edit a todo-group', function(assert) {
-  server.createList('todo-group', 5);
-  server.create('todo-group', {
-    todoGroupId: 1,
-  });
-
+test('user can navigate to the edit form from /todo-groups', function(assert) {
+  server.createList('todo-group', 4);
   visit('/todo-groups');
-  click('.edit-todo');
+  click('.edit-btn:eq(2)');
 
   andThen(function() {
-    assert.equal(currentURL(), '/todo-groups/1/edit');
+    assert.equal(currentRouteName(), 'todo-group.edit', 'Clicking on the third element with the class "edit-btn" should redirect to the route "todo-group.edit"');
+    assert.equal(currentURL(), '/todo-groups/3/edit');
     const todoGroup = server.db.todoGroups.find(1);
-
-    findWithAssert(`:contains(${todoGroup.verb})`);
-
   });
 });
 
