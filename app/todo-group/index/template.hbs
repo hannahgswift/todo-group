@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <h2 class="page-title">Categories</h2>
-      {{#link-to "todo-group.new" class="new-btn" }}Add a Todo{{/link-to}}
+      {{#link-to "todo-group.new" class="new-btn" }}Add New Category{{/link-to}}
 
       <div class="todo-group">
         {{#each model as |todoGroup|}}
@@ -13,8 +13,8 @@
               </h4>
             </div>
             <div class="button-container">
-              <button class="button delete delete-todo" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}>Delete</button>
-            {{#link-to "todo-group.edit" todoGroup.id class="edit-btn"}}Edit{{/link-to}}
+              <button class="button delete delete-btn" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}>Delete</button>
+              {{#link-to "todo-group.edit" todoGroup.id class="edit-btn"}}Edit{{/link-to}}
             </div>
           </div>
         {{/each}}

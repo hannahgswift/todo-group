@@ -1,7 +1,7 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'todo-group/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | todo group');
+moduleForAcceptance('Acceptance | todo group index');
 
 test('visiting /todo-groups', function(assert) {
   visit('/todo-groups');
@@ -62,18 +62,22 @@ test('user can navigate to the edit form from /todo-groups', function(assert) {
 
   andThen(function() {
     assert.equal(currentRouteName(), 'todo-group.edit', 'Clicking on the third element with the class "edit-btn" should redirect to the route "todo-group.edit"');
-    assert.equal(currentURL(), '/todo-groups/3/edit');
+    assert.equal(currentURL(), '/todo-groups/3/edit', 'Clicking on the third element with the class "edit-btn" should redirect to the URL "/todo-groups/3/edit"');
     const todoGroup = server.db.todoGroups.find(1);
   });
 });
 
-test('user can click a button to delete a todo!', function(assert) {
-  server.createList('todo-group', 4);
+test('user can delete todo-groups when visiting /todo-groups', function(assert) {
+  server.createList('todo-group', 3);
   visit('/todo-groups');
-  click('.delete[data-id=1]');
+  click('.delete-btn:eq(1)');
 
   andThen(function() {
-    assert.equal(find('.todo-list__item').length, 4, 'The deleted item should not show in the list');
-    // assert.equal(server.db.todo-groups.find(1), null, 'The deleted author should be removed from the API');
+    assert.equal(find('.collection__item').length, 2,
+      'The deleted item should not show in the list');
+    assert.equal(server.db.todoGroups.length, 2,
+      'The deleted item should also be deleted in the API!');
+    assert.equal(currentURL(), '/todo-groups',
+      'The url should change after deleting a category');
   });
 });

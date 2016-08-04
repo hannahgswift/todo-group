@@ -36,12 +36,13 @@ ul {
   margin: 1rem;
 }
 
-.new-btn, .edit-btn {
+.new-btn, .edit-btn, .submit {
   font-size: 1rem;
   text-decoration: none;
   color: white;
   background: gray;
   padding: 0.5rem 1rem;
+  border: none;
   border-radius: 0.5rem;
   text-transform: uppercase;
     &:hover {
@@ -49,7 +50,7 @@ ul {
     }
 }
 
-.delete-todo {
+.delete-btn {
   font-size: 1rem;
   text-transform: uppercase;
   border: none;

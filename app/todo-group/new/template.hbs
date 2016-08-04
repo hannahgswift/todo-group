@@ -1,4 +1,17 @@
-<h2 class="page-title">New Todo</h2>
+<div class="section">
+  <div class="container">
+    <div class="content">
+      <h2 class="page-title">New Category</h2>
+      <div class="collection__item">
+        {{#simple-form onsubmit=(action "saveCategory") as |formValues|}}
+          {{input class="input title-input" value=formValues.verb type="text" placeholder="Title"}}
+          <button class="submit">Save</button>
+        {{/simple-form}}
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 {{outlet}}
