@@ -3,7 +3,7 @@ import moduleForAcceptance from 'todo-group/tests/helpers/module-for-acceptance'
 
 moduleForAcceptance('Acceptance | todo group');
 
-test('visiting /todo-group', function(assert) {
+test('visiting /todo-groups', function(assert) {
   visit('/todo-groups');
 
   andThen(function() {
@@ -11,8 +11,8 @@ test('visiting /todo-group', function(assert) {
   });
 });
 
-test('visiting /todo-group shows a list of tasks', function(assert) {
-  server.createList('todo-group');
+test('visiting /todo-groups shows a list of tasks', function(assert) {
+  server.createList('todo-group', 10);
   visit('/todo-groups');
 
   andThen(function() {
@@ -32,11 +32,30 @@ test('user can navigate to add new todo from main list', function(assert) {
 });
 
 test('user can navigate to edit a todo-group', function(assert) {
+  server.createList('todo-group', 5);
+  server.create('todo-group', {
+    todoGroupId: 1,
+  });
+
   visit('/todo-groups');
   click('.edit-todo');
 
   andThen(function() {
-    assert.equal(currentURL(), '/todo-groups/:id/edit');
-    assert.equal(findWithAssert('.delete-todo'));
+    assert.equal(currentURL(), '/todo-groups/1/edit');
+    const todoGroup = server.db.todoGroups.find(1);
+
+    findWithAssert(`:contains(${todoGroup.verb})`);
+
+  });
+});
+
+test('user can click a button to delete a todo!', function(assert) {
+  server.createList('todo-group', 4);
+  visit('/todo-groups');
+  click('.delete[data-id=1]');
+
+  andThen(function() {
+    assert.equal(find('.todo-list__item').length, 3, 'The deleted item should not show in the list');
+    // assert.equal(server.db.todo-groups.find(1), null, 'The deleted author should be removed from the API');
   });
 });
