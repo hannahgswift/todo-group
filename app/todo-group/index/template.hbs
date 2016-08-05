@@ -1,24 +1,26 @@
 <div class="section">
   <div class="container">
     <div class="content">
-      <h2 class="page-title">Categories</h2>
-      {{#link-to "todo-group.new" class="new-btn" }}Add New Category{{/link-to}}
-
-      <div class="todo-group">
-        {{#each model as |todoGroup|}}
-          <div class="collection__item">
-            <div class="box">
-              <h4 class="todo-group__title">
+      {{!-- <div class="page-header">
+        <h2 class="page-title">Categories</h2>
+      </div> --}}
+      <div class="todo-group__list">
+        <div class="todo-group">
+          {{#each model as |todoGroup|}}
+            <div class="collection__item">
+              <div class="box">
+                <p class="todo-group__title">
                 {{todoGroup.verb}}
-              </h4>
+              </p>
+              </div>
+              <div class="button-container">
+                <button class="button delete delete-btn" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                {{#link-to "todo-group.edit" todoGroup.id class="edit-btn" }}<i class="fa fa-pencil" aria-hidden="true"></i>{{/link-to}}
+              </div>
             </div>
-            <div class="button-container">
-              <button class="button delete delete-btn" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}><i class="fa fa-trash-o" aria-hidden="true"></i>
-Delete</button>
-              {{#link-to "todo-group.edit" todoGroup.id class="edit-btn"}}Edit{{/link-to}}
-            </div>
-          </div>
-        {{/each}}
+          {{/each}}
+        </div>
+        {{#link-to "todo-group.new" class="new-btn" }}Add New List{{/link-to}}
       </div>
     </div>
   </div>
