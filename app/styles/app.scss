@@ -79,6 +79,7 @@ ul {
   // border-radius: 0.5rem;
   text-transform: uppercase;
     &:hover {
+      color: gray;
     }
 }
 
@@ -104,7 +105,7 @@ ul {
   // border-radius: 0.5rem;
   &:hover {
     cursor: pointer;
-    color: red;
+    color: gray;
   }
 }
 

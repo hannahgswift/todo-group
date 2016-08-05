@@ -32,7 +32,7 @@ test('user can see list of todo categories when visiting /todo-groups', function
       '"todo-group__title" filled with the title of the looped over todo.' +
       '(Note: this only tests the title of the first group, but should give the same result)');
   });
-})
+});
 
 // test('visiting /todo-groups shows a list of tasks', function(assert) {
 //   server.createList('todo-group', 10);
