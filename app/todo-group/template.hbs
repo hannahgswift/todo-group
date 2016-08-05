@@ -3,7 +3,14 @@
     <div class="container">
       <h2 class="app-title">{{#link-to "todo-group.index"}}<i class="fa fa-bars" aria-hidden="true"></i>{{/link-to}}Todos</h2>
     </div>
+    <nav class="todo-nav">
+      {{#each model as |todoGroup|}}
+        {{#link-to "todo-group.edit" todoGroup class="nav__item"}}
+          {{todoGroup.verb}}
+        {{/link-to}}
+      {{/each}}
+      {{#link-to "todo-group.new" class="new-btn nav__item nav__item--new-link"}}Add New List{{/link-to}}
+    </nav>
     {{ outlet }}
-
   </nav>
 </div>

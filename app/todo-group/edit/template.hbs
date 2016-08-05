@@ -1,10 +1,10 @@
 <h1 class="page-title">Editing {{ model.verb }}</h1>
 
-{{#simple-form onsubmit=(action "updateCategory" model) as |formValues|}}
-  {{input class="input title-input" value=model.verb type="text"}}
+{{#simple-form startingValues=model onsubmit=(action "updateCategory" model) as |formValues|}}
+  {{input class="input title-input" value=formValues.verb type="text"}}
   <button class="submit">Save</button>
 {{/simple-form}}
 
 
 
-{{ outlet }}
+{{!-- {{ outlet }} --}}

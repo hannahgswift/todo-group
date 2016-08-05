@@ -63,7 +63,7 @@ test('user can navigate to the edit form from /todo-groups', function(assert) {
   andThen(function() {
     assert.equal(currentRouteName(), 'todo-group.edit', 'Clicking on the third element with the class "edit-btn" should redirect to the route "todo-group.edit"');
     assert.equal(currentURL(), '/todo-groups/3/edit', 'Clicking on the third element with the class "edit-btn" should redirect to the URL "/todo-groups/3/edit"');
-    const todoGroup = server.db.todoGroups.find(1);
+    server.db.todoGroups.find(1);
   });
 });
 

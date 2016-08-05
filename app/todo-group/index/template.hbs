@@ -9,7 +9,7 @@
           {{#each model as |todoGroup|}}
             <div class="collection__item">
               <div class="box">
-                {{#link-to "todo-group.edit" todoGroup class="todo-group__title nav__item"}}
+                {{#link-to "todo-group.edit" todoGroup class="todo-group__title"}}
                   {{todoGroup.verb}}
                 {{/link-to}}
               </div>
@@ -20,10 +20,10 @@
             </div>
           {{/each}}
         </div>
-        {{#link-to "todo-group.new" class="new-btn nav__item nav__item--new-link"}}Add New List{{/link-to}}
+        {{#link-to "todo-group.new" class="new-btn"}}Add New List{{/link-to}}
       </div>
     </div>
   </div>
 </div>
 
-{{outlet}}
+{{!-- {{outlet}} --}}
