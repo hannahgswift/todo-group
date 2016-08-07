@@ -1,4 +1,10 @@
-$project-blue: #29cdd7;
+@import 'buttons.scss';
+
+$project-orange: #ff8f00;
+$project-orange-b: #d67800;
+$project-green: #66bb6a;
+$project-blue: #2196f3;
+$project-red: #d32f2f;
 
 * {
   box-sizing: border-box;
@@ -10,7 +16,6 @@ body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
   font-weight: 200;
-  color: gray;
   overflow: auto;
 }
 
@@ -27,27 +32,52 @@ ul {
 
 .app-nav {
   width: 100%;
-  background: $project-blue;
+  background: $project-orange;
   color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  margin-bottom: 0;
+}
+
+.logo {
+  width: 100%;
+}
+
+.app-title {
+  display: flex;
+  flex-shrink: 1;
+}
+
+.todo-nav {
+  display: flex;
+  flex-direction: row;
+  // align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav__item {
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+  // border: 1px solid red;
+  padding: 1rem;
   margin-bottom: 0;
 }
 
 .app-title {
   margin: 0 auto;
-  padding: 1rem;
   text-align: left;
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
 }
 
-// .container {
-//   width: 100%;
-//   min-width: 65rem;
-//   margin: auto;
-// }
+.container {
+  max-width: 55rem;
+  width: 100%;
+  margin: auto;
+}
 
 
 .page-title {
@@ -59,97 +89,41 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.new-link {
-  text-align: center;
-}
-
-.button-container {
-  // margin: 1rem;
-}
-
-.edit-btn, .submit {
-  font-size: 0.5rem;
-  text-decoration: none;
-  color: white;
-  background: transparent;
-  padding: 1rem 1rem;
-  border: none;
-  // border-radius: 0.5rem;
-  text-transform: uppercase;
-    &:hover {
-      color: gray;
-    }
-}
-
-.new-btn {
-  text-decoration: none;
-  background: $project-blue;
-  color: white;
-  text-transform: uppercase;
-  padding: 1rem;
-  margin-top: 0;
-  border-bottom: 0.3rem solid $project-blue;
-  &:hover {
-    border-bottom: 0.3rem solid yellow;
-  }
-}
-
-.delete-btn {
-  text-transform: uppercase;
-  border: none;
-  color: white;
-  background: transparent;
-  padding: 1rem 1rem;
-  // border-radius: 0.5rem;
-  &:hover {
-    cursor: pointer;
-    color: gray;
-  }
-}
-
-.fa {
-  font-size: 1.2rem;
-}
-
-.fa-bars {
-  font-size: 2rem;
-  margin: 0 1rem;
-  color: white;
+  border: 1px solid black;
 }
 
 .todo-group__list {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   margin-top: 0;
-  box-shadow: 0rem 0.2rem 0.2rem #999;
+  border: 1px solid black;
 }
 
 .todo-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 100%;
   flex-grow: 1
 }
 
 .collection__item {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
   flex-grow: 1;
   align-items: center;
-  background: $project-blue;
-  color: white;
-  border-bottom: 0.3rem solid $project-blue;
-  &:hover {
-    border-bottom: 0.3rem solid yellow;
-  }
+  padding: 0.5rem 0;
+  // border-bottom: 0.3rem solid $project-blue;
+  // &:hover {
+  //   border-bottom: 0.3rem solid yellow;
+  // }
 }
 
 .todo-group__title {
   margin: 0 1rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: black;
 }

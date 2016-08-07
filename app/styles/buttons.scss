@@ -1,0 +1,65 @@
+$project-orange: #ff8f00;
+$project-orange-b: #d67800;
+$project-green: #66bb6a;
+$project-blue: #2196f3;
+$project-red: #d32f2f;
+
+.new-link {
+  text-align: center;
+}
+
+.button-container {
+  // margin: 1rem;
+}
+
+.edit-btn {
+  text-decoration: none;
+  color: white;
+  background: $project-blue;
+  padding: 1rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.nav__item--new-link {
+  text-decoration: none;
+  background: $project-orange-b;
+  color: white;
+  text-transform: capitalize;
+  padding: 5rem;
+  margin-top: 0;
+  border-bottom: 0.3rem solid $project-orange-b;
+  &:active {
+    border-bottom: 0.3rem solid $project-blue;
+  }
+}
+
+.new-btn {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: white;
+  background: $project-green;
+  padding: 1rem;
+}
+
+.delete-btn {
+  text-transform: uppercase;
+  border: none;
+  color: white;
+  background: $project-red;
+  padding: 1rem 1rem;
+  // border-radius: 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fa {
+  font-size: 1.2rem;
+}
+
+.fa-bars {
+  font-size: 2rem;
+  margin: 0 1rem;
+  color: white;
+}
