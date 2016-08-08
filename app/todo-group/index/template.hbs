@@ -7,11 +7,9 @@
   <div class="todo-group">
     {{#each model as |todoGroup|}}
       <div class="collection__item">
-        {{!-- <div class="box"> --}}
           {{#link-to "todo-group.edit" todoGroup class="todo-group__title"}}
             {{todoGroup.verb}}
           {{/link-to}}
-        {{!-- </div> --}}
         <div class="index-buttons">
           {{#link-to "todo-group.edit" todoGroup.id class="edit-btn" }}edit{{/link-to}}
           <button class="button delete delete-btn" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}><i class="fa fa-trash-o" aria-hidden="true"></i></button>

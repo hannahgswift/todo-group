@@ -64,8 +64,8 @@ ul {
   text-transform: capitalize;
   padding: 1rem;
   margin-bottom: 0;
-  &:active {
-    border-bottom: 3px solid yellow;
+  &.active {
+    border-bottom: 4px solid yellow;
   }
 }
 

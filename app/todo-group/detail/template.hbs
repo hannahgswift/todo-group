@@ -1,0 +1,16 @@
+<div class="card">
+  <h2 class="page-title">{{ model.verb }}</h2>
+
+  <div class="collection__item"></div>
+
+  <div class="todo-group">
+    {{#each model as |todoItem|}}
+      <div class="collection__item">
+            {{todoItem.name}}
+      </div>
+    {{/each}}
+  </div>
+
+</div>
+
+{{outlet}}

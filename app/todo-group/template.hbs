@@ -8,7 +8,7 @@
     </div>
     <nav class="todo-nav">
       {{#each model as |todoGroup|}}
-        {{#link-to "todo-group.edit" todoGroup class="nav__item"}}
+        {{#link-to "todo-group.detail" todoGroup class="nav__item"}}
           {{todoGroup.verb}}
         {{/link-to}}
       {{/each}}
