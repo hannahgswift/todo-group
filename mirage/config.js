@@ -1,3 +1,5 @@
+import config from 'todo-group/config/environment';
+
 export default function() {
 
   // These comments are here to help you get started. Feel free to delete them.
@@ -24,10 +26,21 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.2.x/shorthands/
   */
 
+  if (config.environment === 'production') {
+    this.timing = 10;
+  }
+
   this.get('/todo-groups');
   this.post('/todo-groups');
   this.get('/todo-groups/:id');
-  this.put('/todo-groups/:id');
-  this.patch('/todo-groups/:id');
+  this.put('/todo-groups/:id'); // or this.patch
+  this.patch('/todo-groups/:id'); // or this.patch
   this.del('/todo-groups/:id');
+
+  this.get('/todo-items');
+  this.post('/todo-items');
+  this.get('/todo-items/:id');
+  this.put('/todo-items/:id'); // or this.patch
+  this.patch('/todo-items/:id'); // or this.patch
+  this.del('/todo-items/:id');
 }
