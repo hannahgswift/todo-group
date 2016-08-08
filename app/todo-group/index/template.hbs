@@ -1,3 +1,4 @@
+<div class="card index-card">
 <div class="page-header">
   <h2 class="page-title">Categories</h2>
   {{#link-to "todo-group.new" class="new-btn"}}Add New Category{{/link-to}}
@@ -11,13 +12,14 @@
             {{todoGroup.verb}}
           {{/link-to}}
         {{!-- </div> --}}
-        <div class="button-container">
+        <div class="index-buttons">
           {{#link-to "todo-group.edit" todoGroup.id class="edit-btn" }}edit{{/link-to}}
           <button class="button delete delete-btn" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}><i class="fa fa-trash-o" aria-hidden="true"></i></button>
         </div>
       </div>
     {{/each}}
   </div>
+</div>
 </div>
 
 {{!-- {{outlet}} --}}

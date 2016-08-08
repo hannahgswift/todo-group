@@ -15,7 +15,7 @@ body {
   height: 100vh;
   margin: 0;
   font-family: 'Work Sans', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   overflow: auto;
 }
 
@@ -59,14 +59,18 @@ ul {
 
 .nav__item {
   text-decoration: none;
+  font-weight: bold;
   color: white;
   text-transform: capitalize;
-  // border: 1px solid red;
   padding: 1rem;
   margin-bottom: 0;
+  &:active {
+    border-bottom: 3px solid yellow;
+  }
 }
 
 .app-title {
+  padding-top: 0.5rem;
   margin: 0 auto;
   text-align: left;
   font-family: 'Dancing Script', cursive;
@@ -79,9 +83,9 @@ ul {
   margin: auto;
 }
 
-
 .page-title {
-  text-align: center;
+  text-transform: capitalize;
+  margin: 1rem 0;
 }
 
 .page-header {
@@ -89,15 +93,13 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
 }
 
 .todo-group__list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0;
-  border: 1px solid black;
+  box-shadow: 0 0 0.2rem lightgray;
 }
 
 .todo-group {
@@ -114,11 +116,9 @@ ul {
   width: 100%;
   flex-grow: 1;
   align-items: center;
-  padding: 0.5rem 0;
-  // border-bottom: 0.3rem solid $project-blue;
-  // &:hover {
-  //   border-bottom: 0.3rem solid yellow;
-  // }
+  border-top: 1.2px solid lightgray;
+  border-right: 1.2px solid lightgray;
+  border-left: 1.2px solid lightgray;
 }
 
 .todo-group__title {
@@ -126,4 +126,30 @@ ul {
   text-transform: capitalize;
   text-decoration: none;
   color: black;
+}
+
+.form {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid $project-gray;
+  text-transform: capitalize;
+  line-height: 1.5rem;
+  font-weight: 100;
+}
+
+.card {
+  padding: 1rem;
+  margin: 2rem 0;
+  box-shadow: 0rem 0rem 0.4rem lightgray;
+}
+
+
+.card-title {
+  margin: 0;
+  text-transform: capitalize;
 }

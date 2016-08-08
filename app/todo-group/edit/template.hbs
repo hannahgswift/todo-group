@@ -1,10 +1,14 @@
-<h1 class="page-title">Editing {{ model.verb }}</h1>
-
-{{#simple-form startingValues=model onsubmit=(action "updateCategory" model) as |formValues|}}
-  {{input class="input title-input" value=formValues.verb type="text"}}
-  <button class="submit">Save</button>
-{{/simple-form}}
-
+<div class="card">
+  <h2 class="page-title">Editing {{ model.verb }}</h2>
+  {{#simple-form startingValues=model onsubmit=(action "updateCategory" model) as |formValues|}}
+    <p class="card-title">Title</p>
+    {{input class="input title-input" value=formValues.verb type="text"}}
+    <div class="button-container">
+      <button class="back-btn">Back</button>
+      <button class="submit save-btn">Save</button>
+    </div>
+  {{/simple-form}}
+</div>
 
 
 {{!-- {{ outlet }} --}}
