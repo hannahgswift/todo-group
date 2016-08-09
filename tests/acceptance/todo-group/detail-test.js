@@ -36,9 +36,9 @@ test('visiting /todo-groups/1 shows a list of todo-items that belong to todo-gro
     // assert.equal(findWithAssert('.collection__item').length, 5,
     //   'There should be a "collection__item" for each "todo-group" record in the API.' +
     //   'To do this you should load the models from Ember Data into your template');
-    assert.equal(findWithAssert('.collection__item').length, 4,
-      'There should be a "collection__item" for each "todo-group" record in the API.' +
-      'And a collection__item for the new form at the bottom' +
+    assert.equal(findWithAssert('.collection__item').length, 5,
+      'There should be a "collection__item" for each "todo-group" record in the API. ' +
+      'And a collection__item for the new form at the bottom. ' +
       'To do this you should load the models from Ember Data into your template');
 
     assert.equal(findWithAssert('.todo-item__name:first').text().trim(), item.name,

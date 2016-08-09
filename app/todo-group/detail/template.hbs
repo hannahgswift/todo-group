@@ -6,9 +6,9 @@
 <div class="collection">
 {{#each model.items as |todoItem|}}
 <div class="collection__item">
-  <button class="todo-item__toggle">
+  <button class="todo-item__toggle" {{action "toggleCheck" todoItem}}>
     {{#if todoItem.done}}
-      <span {{action "editTodo" on="click"}} class="todo-item__done fa fa-check-square-o"></span>
+      <span class="todo-item__done fa fa-check-square-o"></span>
     {{else}}
       <span class="todo-item__done fa fa-square-o"></span>
     {{/if}}
