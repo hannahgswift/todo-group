@@ -9,7 +9,8 @@ $project-gray: #979797;
   text-align: center;
 }
 
-.button-container {
+.form-actions {
+  margin-top: 2rem;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -17,7 +18,8 @@ $project-gray: #979797;
 }
 
 .index-buttons {
-  margin: 1rem;
+  display: flex;
+  margin: 0.5rem 0;
 }
 
 .edit-btn {
@@ -71,7 +73,7 @@ $project-gray: #979797;
   background: $project-gray;
   border: none;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  // margin-top: 1rem;
   font-size: 1rem;
 }
 
@@ -80,7 +82,7 @@ $project-gray: #979797;
   color: white;
   background: $project-orange;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  // margin-top: 1rem;
   font-size: 1rem;
   border: none;
 }

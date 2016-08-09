@@ -77,25 +77,30 @@ ul {
   font-size: 2.5rem;
 }
 
+.section {
+  margin: 2rem 1rem;
+}
+
 .container {
-  max-width: 55rem;
+  max-width: 65rem;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .page-title {
   text-transform: capitalize;
-  margin: 1rem 0;
+  margin: 0;
 }
 
-.page-header {
+.card__title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.todo-group__list {
+.collection {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +111,7 @@ ul {
   display: flex;
   flex-direction: column;
   width: 100%;
-  flex-grow: 1
+  flex-grow: 1;
 }
 
 .collection__item {
@@ -119,10 +124,11 @@ ul {
   border-top: 1.2px solid lightgray;
   border-right: 1.2px solid lightgray;
   border-left: 1.2px solid lightgray;
+  padding: 0.5rem 1rem;
 }
 
 .todo-group__title {
-  margin: 0 1rem;
+  // margin: 0 1rem;
   text-transform: capitalize;
   text-decoration: none;
   color: black;
@@ -130,6 +136,7 @@ ul {
 
 .form {
   width: 100%;
+  margin-top: 1rem;
 }
 
 .input {
@@ -149,7 +156,19 @@ ul {
 }
 
 
-.card-title {
+label {
+  font-size: 0.8rem;
   margin: 0;
   text-transform: capitalize;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-item__name {
+  flex-grow: 1;
+  margin: 0.5rem;
 }

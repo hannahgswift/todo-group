@@ -1,9 +1,9 @@
 <div class="card index-card">
-<div class="page-header">
+<div class="card__title">
   <h2 class="page-title">Categories</h2>
   {{#link-to "todo-group.new" class="new-btn"}}Add New Category{{/link-to}}
 </div>
-<div class="todo-group__list">
+<div class="collection">
   <div class="todo-group">
     {{#each model as |todoGroup|}}
       <div class="collection__item">
