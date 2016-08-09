@@ -155,6 +155,10 @@ ul {
   box-shadow: 0rem 0rem 0.4rem lightgray;
 }
 
+.collection {
+  margin-top: 1rem;
+}
+
 
 label {
   font-size: 0.8rem;
@@ -172,3 +176,8 @@ label {
   flex-grow: 1;
   margin: 0.5rem;
 }
+
+// .add-form {
+//   display: flex;
+//   flex-direction: row;
+// }

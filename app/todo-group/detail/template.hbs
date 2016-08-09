@@ -3,21 +3,37 @@
   <h2 class="page-title">{{ model.verb }}</h2>
   </div>
 
-{{#each model.items as |item|}}
+<div class="collection">
+{{#each model.items as |todoItem|}}
 <div class="collection__item">
   <button class="todo-item__toggle">
-    <span aria-hidden="true" class="todo-item__done fa fa-check-square-o">
-    </span>
+    {{#if todoItem.done}}
+      <span {{action "editTodo" on="click"}} class="todo-item__done fa fa-check-square-o"></span>
+    {{else}}
+      <span class="todo-item__done fa fa-square-o"></span>
+    {{/if}}
   </button>
-  <p class="todo-item__name">{{item.name}}</p>
+  <p class="todo-item__name">{{todoItem.name}}</p>
   <div class="todo-item__actions btn-item">
-    <button class="btn delete delete-btn">
+    <button class="btn delete delete-btn" data-id="{{todo-item.id}}" {{action "destroy" todoItem}}>
       <i class="fa fa-trash-o" aria-hidden="true"></i>
     </button>
   </div>
 </div>
 {{/each}}
 
+<div class="collection__item">
+{{#simple-form class="form" as |formValues|}}
+  <label>New Todo Item:</label>
+  {{input class="input title-input todo-item-name" value=formValues.name type="text"}}
+  <div class="form-actions">
+    <button class="back-btn">Back</button>
+    <button class="submit save-btn">Add</button>
+  </div>
+{{/simple-form}}
+</div>
 </div>
 
-{{outlet}}
+</div>
+
+{{!-- {{outlet}} --}}

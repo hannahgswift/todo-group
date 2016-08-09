@@ -1,3 +1,5 @@
+// Scenarios are not loaded in tests!
+
 import { faker } from 'ember-cli-mirage';
 
 export default function(server) {

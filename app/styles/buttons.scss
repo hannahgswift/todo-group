@@ -5,6 +5,10 @@ $project-blue: #2196f3;
 $project-red: #d32f2f;
 $project-gray: #979797;
 
+button {
+  outline: 0;
+}
+
 .new-link {
   text-align: center;
 }
@@ -15,6 +19,11 @@ $project-gray: #979797;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.todo-item__actions {
+  display: flex;
+  margin: 0.5rem 0;
 }
 
 .index-buttons {
@@ -96,3 +105,21 @@ $project-gray: #979797;
   margin: 0 1rem;
   color: white;
 }
+
+.todo-item__toggle {
+  background: 0 0;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+// .todo-item__toggle .fa-check-square-o,
+// .todo-item__toggle:hover .fa-square-o {
+//     display: none;
+// }
+//
+// .todo-item__toggle:hover .fa-check-square-o {
+//     display: inline;
+// }
