@@ -21,9 +21,8 @@
 <div class="collection__item">
   {{#simple-form class="form" onsubmit=(action "saveItem" model) as |formValues|}}
     <label>New Todo Item:</label>
+    <div class="input-addon">
     {{input class="input title-input todo-item-name" value=formValues.name type="text"}}
-    <div class="form-actions">
-      <button class="back-btn">Back</button>
       <button type="submit" class="submit save-btn">Add</button>
     </div>
   {{/simple-form}}
