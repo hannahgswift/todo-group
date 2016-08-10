@@ -15,7 +15,8 @@ test('User can see a list of todo categories and a link to add on every page (/t
       'To do this you should load the models from Ember Data into your template');
 
       const firstGroup = server.db.todoGroups.find(1);
-      assert.equal(findWithAssert('.nav__item:first').text().trim(), firstGroup.title,
+
+      assert.equal(findWithAssert('.nav__item:first').text().trim(), firstGroup.verb,
         'For each "todo-group" pulled from the API, there should be an element with the class' +
         '"nav__item" filled with the title of the looped over todo.' +
         '(Note: this only tests the title of the first group, but should give the same result)');
