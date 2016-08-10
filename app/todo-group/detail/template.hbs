@@ -7,11 +7,7 @@
 {{#each model.items as |todoItem|}}
 <div class="collection__item">
   <button class="todo-item__toggle" {{action "toggleCheck" todoItem}}>
-    {{#if todoItem.done}}
-      <span class="todo-item__done fa fa-check-square-o"></span>
-    {{else}}
-      <span class="todo-item__done fa fa-square-o"></span>
-    {{/if}}
+      <span class="todo-item__done fa {{if todoItem.done "fa-check-square-o" "fa-square-o"}}"></span>
   </button>
   <p class="todo-item__name">{{todoItem.name}}</p>
   <div class="todo-item__actions btn-item">
@@ -23,14 +19,14 @@
 {{/each}}
 
 <div class="collection__item">
-{{#simple-form class="form" as |formValues|}}
-  <label>New Todo Item:</label>
-  {{input class="input title-input todo-item-name" value=formValues.name type="text"}}
-  <div class="form-actions">
-    <button class="back-btn">Back</button>
-    <button class="submit save-btn">Add</button>
-  </div>
-{{/simple-form}}
+  {{#simple-form class="form" onsubmit=(action "saveItem" model) as |formValues|}}
+    <label>New Todo Item:</label>
+    {{input class="input title-input todo-item-name" value=formValues.name type="text"}}
+    <div class="form-actions">
+      <button class="back-btn">Back</button>
+      <button type="submit" class="submit save-btn">Add</button>
+    </div>
+  {{/simple-form}}
 </div>
 </div>
 

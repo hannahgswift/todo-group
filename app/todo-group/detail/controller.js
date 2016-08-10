@@ -10,8 +10,22 @@ export default Ember.Controller.extend({
 
     toggleCheck(todoItem) {
       todoItem.toggleProperty('done');
+      todoItem.save();
       // todoItem.set('done', false);
     },
 
+    // saveItem(formValues) {
+    //   this.store.createRecord('todo-item', formValues)
+    //     .save().then(() => {
+    //       this.transitionToRoute('todo-group.detail');
+    //     });
+    // },
+
+    saveItem(todoGroup, formValues, reset) {
+      const duck = this.store.createRecord('todo-item', formValues);
+      duck.set('group', todoGroup);
+      duck.save();
+      reset();
+    },
   },
   });
