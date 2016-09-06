@@ -1,34 +1,29 @@
 <div class="card">
   <div class="card-title">
-  <h2 class="page-title">{{ model.verb }}</h2>
+    <h2 class="page-title">{{ model.verb }}</h2>
   </div>
-
-<div class="collection">
-{{#each model.items as |todoItem|}}
-<div class="collection__item">
-  <button class="todo-item__toggle" {{action "toggleCheck" todoItem}}>
+  <div class="collection">
+    {{#each model.items as |todoItem|}}
+      <div class="collection__item">
+        <button class="todo-item__toggle" {{action "toggleCheck" todoItem}}>
       <span class="todo-item__done fa {{if todoItem.done "fa-check-square-o" "fa-square-o"}}"></span>
   </button>
-  <p class="todo-item__name">{{todoItem.name}}</p>
-  <div class="todo-item__actions btn-item">
-    <button class="btn delete delete-btn" data-id="{{todo-item.id}}" {{action "destroy" todoItem}}>
+        <p class="todo-item__name">{{todoItem.name}}</p>
+        <div class="todo-item__actions btn-item">
+          <button class="btn delete delete-btn" data-id="{{todo-item.id}}" {{action "destroy" todoItem}}>
       <i class="fa fa-trash-o" aria-hidden="true"></i>
     </button>
+        </div>
+      </div>
+    {{/each}}
+    <div class="collection__item">
+      {{#simple-form class="form" onsubmit=(action "saveItem" model) as |formValues|}}
+        <label>New Todo Item:</label>
+        <div class="input-addon">
+          {{input class="input title-input todo-item-name" value=formValues.name type="text"}}
+          <button type="submit" class="submit save-btn">Add</button>
+        </div>
+      {{/simple-form}}
+    </div>
   </div>
 </div>
-{{/each}}
-
-<div class="collection__item">
-  {{#simple-form class="form" onsubmit=(action "saveItem" model) as |formValues|}}
-    <label>New Todo Item:</label>
-    <div class="input-addon">
-    {{input class="input title-input todo-item-name" value=formValues.name type="text"}}
-      <button type="submit" class="submit save-btn">Add</button>
-    </div>
-  {{/simple-form}}
-</div>
-</div>
-
-</div>
-
-{{!-- {{outlet}} --}}

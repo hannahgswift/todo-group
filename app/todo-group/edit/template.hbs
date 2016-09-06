@@ -1,16 +1,12 @@
 <div class="card">
   <div class="card__title">
-  <h2 class="page-title">Editing {{ model.verb }}</h2>
+    <h2 class="page-title">Editing {{ model.verb }}</h2>
   </div>
   {{#simple-form class="form" startingValues=model onsubmit=(action "updateCategory" model) as |formValues|}}
-    <label>Title</label>
-    {{input class="input title-input" value=formValues.verb type="text"}}
+    <label>Title</label> {{input class="input title-input" value=formValues.verb type="text"}}
     <div class="form-actions">
       <button class="back-btn">Back</button>
       <button class="submit save-btn">Save</button>
     </div>
   {{/simple-form}}
 </div>
-
-
-{{!-- {{ outlet }} --}}

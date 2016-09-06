@@ -11,8 +11,8 @@ export default function(server) {
     Make sure to define a factory for each model you want to create.
   */
 
-  server.createList('todo-group', 8);
-  server.createList('todo-item', 8, {
+  server.createList('todo-group', 6);
+  server.createList('todo-item', 6, {
     todoGroupId() {
       return faker.random.number({
         min: 1,
