@@ -1,0 +1,10 @@
+<div class="card">
+  <h2 class="page-title">New Category</h2>
+  {{#simple-form class="form" onsubmit=(action "saveCategory") as |formValues|}}
+    <label>Title</label> {{input class="input title-input" value=formValues.verb type="text" placeholder="Title"}}
+    <div class="form-actions">
+      <button class="back-btn">Back</button>
+      <button class="submit save-btn">Save</button>
+    </div>
+  {{/simple-form}}
+</div>

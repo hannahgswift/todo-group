@@ -1,0 +1,21 @@
+<div class="card index-card">
+  <div class="card__title">
+    <h2 class="page-title">Categories</h2>
+    {{#link-to "todo-group.new" class="new-btn" }}Add New Category{{/link-to}}
+  </div>
+  <div class="collection">
+    <div class="todo-group">
+      {{#each model as |todoGroup|}}
+        <div class="collection__item">
+          {{#link-to "todo-group.edit" todoGroup class="todo-group__title" }}
+            {{todoGroup.verb}}
+          {{/link-to}}
+          <div class="index-buttons">
+            {{#link-to "todo-group.edit" todoGroup.id class="edit-btn" }}edit{{/link-to}}
+            <button class="button delete delete-btn" data-id="{{todo-group.id}}" {{action "destroy" todoGroup}}><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

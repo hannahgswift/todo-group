@@ -1,0 +1,30 @@
+<div class="app">
+  <div class="app-nav">
+    <div class="logo">
+      <h2 class="app-title">
+        {{#link-to "todo-group.index"}}<i class="fa fa-bars" aria-hidden="true"></i>{{/link-to}}
+        Todos
+      </h2>
+    </div>
+    <nav class="todo-nav">
+      {{#each model as |todoGroup|}}
+        {{#link-to "todo-group.detail" todoGroup class="nav__item" }}
+          {{todoGroup.verb}}
+        {{/link-to}}
+      {{/each}}
+      {{#link-to "todo-group.new" class="nav__item nav__item--new-link" }}
+        New Category
+      {{/link-to}}
+    </nav>
+  </div>
+  <div class="section app-main">
+    <div class="container">
+      {{ outlet }}
+    </div>
+  </div>
+  <div class="app-footer">
+    <div class="container">
+      <h3>Built by Hannah Swift with Ember.js + SASS + Mirage. View source code <a href="https://github.com/hannahgswift/todo-group/tree/develop">here</a>.</h3>
+    </div>
+  </div>
+</div>

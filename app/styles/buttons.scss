@@ -1,0 +1,116 @@
+$project-orange: #ff8f00;
+$project-orange-b: #d67800;
+$project-green: #66bb6a;
+$project-blue: #2196f3;
+$project-red: #d32f2f;
+$project-gray: #979797;
+
+button {
+  outline: 0;
+}
+
+.new-link {
+  text-align: center;
+}
+
+.form-actions {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.todo-item__actions {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.index-buttons {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.edit-btn {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: $project-blue;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.delete-btn {
+  font-weight: bold;
+  border: none;
+  color: white;
+  background: $project-red;
+  padding: 0.5rem 1rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav__item--new-link {
+  text-decoration: none;
+  font-weight: bold;
+  background: $project-orange-b;
+  color: white;
+  text-transform: capitalize;
+  padding: 5rem;
+  margin-top: 0;
+  border-bottom: 0.3rem solid $project-orange-b;
+  &:active {
+    border-bottom: 0.3rem solid $project-blue;
+  }
+}
+
+.new-btn {
+  text-transform: capitalize;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  background: $project-green;
+  padding: 0.5rem 1rem;
+}
+
+.back-btn {
+  font-weight: bold;
+  color: white;
+  background: $project-gray;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.save-btn {
+  font-weight: bold;
+  color: white;
+  background: $project-orange;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fa {
+  font-size: 1.2rem;
+}
+
+.fa-bars {
+  font-size: 2rem;
+  margin: 0 1rem;
+  color: white;
+}
+
+.todo-item__toggle {
+  background: 0 0;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
