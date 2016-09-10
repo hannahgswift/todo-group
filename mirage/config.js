@@ -28,6 +28,9 @@ export default function() {
 
   if (config.environment === 'production') {
     this.timing = 10;
+    ENV['ember-cli-mirage'] = {
+    enabled: true
+  };
   }
 
   this.get('/todo-groups');
